@@ -5,4 +5,3 @@ module.exports = {
   },
   plugins: [],
 };
-// This is a basic Tailwind CSS configuration file.

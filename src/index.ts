@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import 'module-alias/register';
 import 'reflect-metadata';
 import express from 'express';
@@ -6,7 +9,7 @@ import sequelize from './config/database';
 import authRoutes from './routes/auth';
 import projectRoutes from './routes/project';
 import taskRoutes from './routes/task';
-import healthRoutes from './routes/health'; 
+import healthRoutes from './routes/health';
 import { registerSocket } from './sockets';
 
 const app = express();
@@ -16,7 +19,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/tasks', taskRoutes);
-app.use('/api', healthRoutes); 
+app.use('/api', healthRoutes);
 
 app.get('/', (req, res) => {
   res.send('Backend server is running');
